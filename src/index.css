@@ -1,0 +1,148 @@
+:root{
+  --grey: #333;
+
+}
+
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+h1{
+  padding-top: 20px;
+  margin-bottom: 10px;
+}
+
+.container{
+  border-radius: .5rem;
+  padding: 1rem;
+  background: rgb(245, 236, 220);
+  max-width: 100vw;
+  box-sizing: border-box;
+ 
+}
+
+.table{
+  border-collapse: collapse;              
+}
+
+
+
+.cell{
+  border: 1px solid black;
+  padding: 0;
+  position: relative;
+}
+
+.cell:nth-child(3), 
+.cell:nth-child(6), 
+.cell:nth-child(9){
+  border-right: 3px solid var(--grey);
+}
+
+.cell:nth-child(1){
+  border-left: 3px solid var(--grey);
+}
+
+
+.table tr:nth-child(3) .cell,
+.table tr:nth-child(6) .cell,
+.table tr:nth-child(9) .cell{
+  border-bottom:  3px solid var(--grey);
+}
+
+.table tr:nth-child(1) .cell {
+  border-top:  3px solid var(--grey);
+}
+
+input{
+  width: 8vw;
+  aspect-ratio: 1/1;
+  text-align: center;
+  font-size: 2rem;
+  border: none;
+  outline: none;
+  cursor: default;
+  color: #070707;
+  background-color: inherit;
+  max-width: 4rem;
+  box-sizing: border-box;
+}
+
+@media only screen and (max-width: 600px){
+input{
+  width: min(10vw, 300px);
+  font-size: 1.7rem;
+  max-width: 100%;
+}
+
+.cell{
+  border: 1px solid black;
+}
+
+}
+
+input:focus{
+  caret-color: transparent;
+  background: #8ba8f7bd;
+}
+
+input::selection{
+  background: transparent;
+}
+
+.prefilled{
+ background-color: rgb(247, 227, 190);
+
+}
+
+.same-row,
+.same-col,
+.same-box{
+  background-color:  #bccaf285 ;
+}
+
+.repeated{
+  background-color: red;
+}
+
+.controls{
+  margin-top: 16px;
+}
+
+.controls button{
+  margin-right: 8px;
+  border: none;
+  border-radius: 3px;
+  font-size: medium;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.controls button:hover{
+  background-color: rgb(189, 190, 190);
+}
+
+.status{
+  font-weight: bold;
+  position: absolute;
+  top: 5px;
+  color: --grey;
+  padding: 10px 15px;
+  border-radius: 10px;
+  
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.status.correct{
+  background-color: #97fba9;
+}
+.status.incorrect{
+  background-color: #ff8787;
+}
+
+
+
